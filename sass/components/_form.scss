@@ -15,6 +15,9 @@
     width: 90%;
     display: block;
     transition: all 0.3s;
+    @include respond(tap-port) {
+      width: 100%;
+    }
     &:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
@@ -46,6 +49,11 @@
     float: left;
     width: 50%;
     display: block;
+    @include respond(tap-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
   }
   &__radio-input {
     display: none;

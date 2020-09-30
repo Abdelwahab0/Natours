@@ -13,6 +13,12 @@
   visibility: hidden;
 
   &__content {
+    @include respond(tap-port) {
+      width: 90%;
+    }
+    @include respond(phone) {
+      width: 100%;
+    }
     position: fixed;
     top: 50%;
     left: 50%;
@@ -32,6 +38,10 @@
   &__left {
     width: 33.333333%;
     display: table-cell;
+
+    @include respond(phone) {
+      width: 1%;
+    }
   }
   &__right {
     width: 66.666666%;
@@ -40,10 +50,24 @@
     padding: 3rem 5rem;
   }
   &__img {
+    @include respond(tap-port) {
+      height: 9%;
+      padding: 1rem;
+      &:not(:last-child) {
+        margin-top: 11rem;
+      }
+      @include respond(phone) {
+        display: none;
+      }
+    }
     display: block;
     width: 100%;
   }
   &__text {
+    @include respond(phone) {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
     font-size: 1.4;
     margin-bottom: 4rem;
     column-count: 2;
